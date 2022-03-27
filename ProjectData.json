@@ -1,0 +1,47 @@
+{
+  "Constants": {
+    "colors": {
+      "danger": "#EE1010",
+      "red": "#F15B2A",
+      "black": "#1B1A1B",
+      "gray": "#f0f0f0",
+      "lightGray": "#efefef",
+      "darkGray": "#6e6e6e",
+      "white": "#FFFFFF",
+      "purple": "#6f42c1",
+      "darkPurple": "#392165",
+      "mediumPurple": "#533192",
+      "lightPurple": "#848484",
+      "green": "#28a745",
+      "icons": "#126712",
+      "indicator": "#126712",
+      "cdndarkred": "#126712"
+
+    },
+    "currencies": {
+      "aud": { "name": "Australian dollar", "unit": "AUD", "symbol": "$", "id": "australian-dollar" },
+      "cad": { "name": "Canadian dollar", "unit": "CAD", "symbol": "$", "id": "canadian-dollar" },
+      "eur": { "name": "Euro", "unit": "EUR", "symbol": "€", "id": "euro" },
+      "hkd": { "name": "Hong Kong dollar", "unit": "HKD", "symbol": "$", "id": "hong-kong-dollar" },
+      "isk": { "name": "Icelandic króna", "unit": "ISK", "symbol": "kr", "id": "icelandic-króna" },
+      "inr": { "name": "Indian rupee", "unit": "INR", "symbol": "₹", "id": "indian-rupee" },
+      "jpy": { "name": "Japanese yen", "unit": "JPY", "symbol": "¥", "id": "japanese-yen" },
+      "nzd": { "name": "New Zealand dollar", "unit": "NZD", "symbol": "$", "id": "new-zealand-dollar" },
+      "gbp": { "name": "Pound sterling", "unit": "GBP", "symbol": "£", "id": "pound-sterling" },
+      "cny": { "name": "Renminbi", "unit": "CNY", "symbol": "¥", "id": "renminbi" },
+      "rub": { "name": "Russian ruble", "unit": "RUB", "symbol": "RUB", "id": "russian-ruble" },
+      "sgd": { "name": "Singapore dollar", "unit": "SGD", "symbol": "$", "id": "singapore-dollar" },
+      "sek": { "name": "Swedish krona", "unit": "SEK", "symbol": "kr", "id": "swedish-krona" },
+      "chf": { "name": "Swiss franc", "unit": "CHF", "symbol": "CHF", "id": "swiss-franc" },
+      "usd": { "name": "United States dollar", "unit": "USD", "symbol": "$", "id": "united-states-dollar" },
+    },
+    "donationAddresses": {
+      "canadaecoin": "CQ9tmuYFyBs6jBty7mURsQppQhB7v75duq",
+      "bitcoin": "bc1qm6knmtrk5jfyt57rwkm8j74kxskxyrl504tlc9",
+      "bitcoinTestnet": "tb1qxvg88t7a498yfdxgs4rjaz3r75dyr64h5r5wd7",
+      "litecoin": "ltc1qrctkm565xale82pjt6nsxsyvvmln2qz8dpf6q9",
+      "litecoinTestnet": "tltc1qxvg88t7a498yfdxgs4rjaz3r75dyr64hdtksah",
+      "komodo": "tltc1qxvg88t7a498yfdxgs4rjaz3r75dyr64hdtksah"
+    }
+  }
+}

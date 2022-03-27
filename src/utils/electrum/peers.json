@@ -1,0 +1,38 @@
+{
+  "bitcoin": [
+    {"host": "btc.litepay.ch", "ssl": 50002, "tcp": 50001},
+    {"host": "electrumx.papabyte.com", "ssl": 50002, "tcp": 50001},
+    {"host": "bitcoin.lukechilds.co", "ssl": 50002, "tcp": 50001},
+    {"host": "electrum.blockstream.info", "ssl": 50002, "tcp": 50001},
+    {"host": "currentlane.8bit.ca", "ssl": 50002, "tcp": 50001},
+    {"host": "hodlers.beer", "ssl": 50002, "tcp": 50001},
+    {"host": "btc.litepay.ch", "ssl": 50002, "tcp": 50001},
+    {"host": "electrumx.papabyte.com", "ssl": 50002, "tcp": 50001},
+    {"host": "bitcoin.lukechilds.co", "ssl": 50002, "tcp": 50001},
+    {"host": "electrum.blockstream.info", "ssl": 50002, "tcp": 50001},
+    {"host": "currentlane.8bit.ca", "ssl": 50002, "tcp": 50001},
+    {"host": "hodlers.beer", "ssl": 50002, "tcp": 50001},
+    {"host": "btc.litepay.ch", "ssl": 50002, "tcp": 50001},
+    {"host": "electrumx.papabyte.com", "ssl": 50002, "tcp": 50001},
+    {"host": "bitcoin.lukechilds.co", "ssl": 50002, "tcp": 50001},
+    {"host": "electrum.blockstream.info", "ssl": 50002, "tcp": 50001},
+    {"host": "currentlane.8bit.ca", "ssl": 50002, "tcp": 50001},
+    {"host": "hodlers.beer", "ssl": 50002, "tcp": 50001},
+    {"host": "btc.litepay.ch", "ssl": 50002, "tcp": 50001},
+    {"host": "electrumx.papabyte.com", "ssl": 50002, "tcp": 50001},
+    {"host": "bitcoin.lukechilds.co", "ssl": 50002, "tcp": 50001},
+    {"host": "electrum.blockstream.info", "ssl": 50002, "tcp": 50001},
+    {"host": "currentlane.8bit.ca", "ssl": 50002, "tcp": 50001},
+    {"host": "hodlers.beer", "ssl": 50002, "tcp": 50001},
+  ],
+  "litecoin": [
+    {"host": "electrum-ltc.bysh.me", "ssl": 50002, "tcp": 50001},
+    {"host": "electrum.ltc.xurious.com", "ssl": 50002, "tcp": 50001},
+    {"host": "ltc.rentonisk.com", "ssl": 50002, "tcp": 50001},
+    // {"host": "ltc.litepay.ch", "ssl": 50002, "tcp": 50001}
+  ],
+  "baricoin": [
+    {"host": "baricoin.clear-net.jp", "ssl": 50001, "tcp": 50002 },
+    {"host": "baripool.f5.si", "ssl": 50001, "tcp": 50002}
+  ]
+}
