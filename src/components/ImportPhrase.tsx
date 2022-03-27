@@ -167,7 +167,7 @@ const _ImportPhrase = ({ createNewWallet = () => null, onBack = () => null }: Im
 			<View style={{ flex: 1, alignItems: "center" }}>
 				<TouchableOpacity style={{ paddingVertical: 20 }} type="transparent" onPress={() => setDisplayAvailableWordlists(true)}>
 					<Text type="white" style={[styles.title, { marginTop: 10 }]}>
-						Selected Wordlist: {availableWordlists[selectedWordlist].title}
+						ワードリスト: {availableWordlists[selectedWordlist].title}
 					</Text>
 				</TouchableOpacity>
 				<TextInput

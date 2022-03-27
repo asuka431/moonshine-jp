@@ -45,15 +45,15 @@ const _BackupPhrase = ({ phrase = [{ id: 0, word: "" }], onPress = () => null }:
 		return (
 			<TouchableOpacity type="background" onPress={onPress} activeOpacity={1}>
 
-				{/*<Text style={styles.header}>Canada eCoin Mobile</Text>*/}
+				{/*<Text style={styles.header}>mobile coin wallet</Text>*/}
 				<Image
 					style={styles.icon}
 					source={require("../assets/logo/main_icon.png")}
 				/>
 
-				{/*<Text style={[styles.text]}>This set of words is your `seed phrase`.  It is the seed that sprouts all of the wallets used within.</Text>*/}
-				<Text style={[styles.text]}>It is VERY IMPORTANT that you write these words down by hand!!</Text>
-				<Text style={[styles.text]}>Include the date and the app name (cdn-moonshine) aswell, and put them in the safest place you have.</Text>
+				{/*<Text style={[styles.text]}>この英単語列はあなたの `秘密鍵`です.  この文字列を使ってあらゆる処理をしています.</Text>*/}
+				<Text style={[styles.text]}>データじゃなく、メモ帳などに直接記録することをお勧めします。</Text>
+				<Text style={[styles.text]}>アプリ名と一緒に単語をすべて書き出し、だれからも見えない場所で安全に保管してください。</Text>
 				<View style={styles.container}>
 					
 

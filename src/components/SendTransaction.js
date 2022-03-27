@@ -985,7 +985,7 @@ class SendTransaction extends Component {
 		return (
 			<View style={styles.container}>
 				<View style={{ backgroundColor: "transparent" }}>
-      	<Text style={[styles.header]}>Send {getCoinData({ selectedCrypto }).label}</Text>
+      	<Text style={[styles.header]}>送る {getCoinData({ selectedCrypto }).label}</Text>
 
 					<Header
 						compress={true}
@@ -1006,7 +1006,7 @@ class SendTransaction extends Component {
 
 					<View style={styles.row}>
 						<View style={styles.addressTitle}>
-							<Text style={styles.text}>Address</Text>
+							<Text style={styles.text}>送り先</Text>
 						</View>
 					</View>
 
@@ -1031,7 +1031,7 @@ class SendTransaction extends Component {
 
 					<View style={styles.row}>
 						<View style={styles.amountContainer}>
-							<Text style={styles.text}>Amount</Text>
+							<Text style={styles.text}>送る量</Text>
 						</View>
 					</View>
 
@@ -1085,7 +1085,7 @@ class SendTransaction extends Component {
 
 					<View style={styles.row}>
 						<View style={styles.messageHeaderContainer}>
-							<Text style={styles.text}>Optional public message</Text>
+							<Text style={styles.text}>メッセージを添えて...</Text>
 						</View>
 					</View>
 
@@ -1113,7 +1113,7 @@ class SendTransaction extends Component {
 					<View style={[styles.row, { marginTop: 6, marginBottom: 1, justifyContent: "space-between" }]}>
 						<View type="transparent" style={{ flexDirection: "row" }}>
 							<MaterialCommunityIcons onPress={this.toggleFeeEstimateModal} type="white" name="help-circle-outline" size={20} />
-							<Text style={styles.text}>Fee: {!this.state.cryptoBalance ? 0 :this.props.transaction.fee || this.props.transaction.recommendedFee} {this.coinData().oshi}/B </Text>
+							<Text style={styles.text}>手数料: {!this.state.cryptoBalance ? 0 :this.props.transaction.fee || this.props.transaction.recommendedFee} {this.coinData().oshi}/B </Text>
 						</View>
 						<View type="transparent">
 							<Text style={[styles.text, { textAlign: "center" }]}>{this.props.settings.fiatSymbol}{fiatFeeLabel}</Text>
@@ -1140,7 +1140,7 @@ class SendTransaction extends Component {
 						style={[styles.row, {justifyContent: "center", paddingVertical: 4 }]}
 					>
 						<FontAwesome5 type="white" name="coins" size={normalize(20)} />
-						<Text style={styles.text}>Coin Control</Text>
+						<Text style={styles.text}>コントロール</Text>
 						{this.state.whiteListedUtxos.length > 0 &&
 						<Text style={styles.text}>{`(${this.state.whiteListedUtxos.length}/${this.props.wallet.wallets[selectedWallet].utxos[selectedCrypto].length})`}</Text>
 						}
@@ -1213,22 +1213,22 @@ class SendTransaction extends Component {
 							<View style={{ flex: 1 }}>
 
 								<Text style={[styles.boldModalText, { fontSize: 24, textAlign: "center", marginBottom: 12 }]}>
-									Is this correct?
+									本当によろしいですね?
 								</Text>
 
 								<View style={styles.modalUpperContent}>
 									<View style={{ flex: 1, backgroundColor: "transparent", alignItems: "center", justifyContent: "center" }}>
-										<Text style={[styles.boldModalText, { alignSelf: "center", textAlign: "center" }]}>Send To:</Text>
+										<Text style={[styles.boldModalText, { alignSelf: "center", textAlign: "center" }]}>送り先:</Text>
 										<Text style={styles.modalText}>{this.props.transaction.address}</Text>
 									</View>
 									<View style={{ flex: 1, backgroundColor: "transparent", marginVertical: 5, flexDirection: "row", justifyContent: "center" }}>
 										<View style={{ flex: 1, backgroundColor: "transparent", alignItems: "center" }}>
-											<Text style={styles.boldModalText}>Amount:</Text>
+											<Text style={styles.boldModalText}>送る量:</Text>
 											<Text style={styles.modalText}>{this.satsToUnit(this.props.transaction.amount)} {this.coinData().acronym}</Text>
 											<Text style={styles.modalText}>{this.props.settings.fiatSymbol}{parseFloat(this.props.transaction.fiatAmount).toFixed(2)}</Text>
 										</View>
 										<View style={{ flex: 1, backgroundColor: "transparent", alignItems: "center" }}>
-											<Text style={styles.boldModalText}>Fee:</Text>
+											<Text style={styles.boldModalText}>手数料:</Text>
 											<Text style={styles.modalText}>{this.satsToUnit(cryptoFeeLabel)} {this.coinData().acronym}</Text>
 											<Text style={styles.modalText}>{this.props.settings.fiatSymbol}{fiatFeeLabel}</Text>
 										</View>
@@ -1241,7 +1241,7 @@ class SendTransaction extends Component {
 									<Text style={[styles.modalText, { fontSize: 20 }]}>{this.props.settings.fiatSymbol}{(Number(this.props.transaction.fiatAmount) + Number(fiatFeeLabel)).toFixed(2)}</Text>
 									<Animated.View style={[styles.copiedContainer, { opacity: this.state.rawTxCopiedOpacity }]}>
 										<View style={styles.copied}>
-											<Text style={styles.copiedText}>RawTx Copied!</Text>
+											<Text style={styles.copiedText}>RawTxをコピーしたぜ!</Text>
 											<Text style={[styles.modalText, { fontSize: 14, marginTop: 5 }]}>
 												{this.state.rawTx}
 											</Text>

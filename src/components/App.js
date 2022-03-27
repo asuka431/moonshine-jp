@@ -2143,7 +2143,7 @@ export default class App extends Component {
 												}}
 											>
 												<Text
-													style={styles.cryptoValue}>{this.hasBackedUpWallet() ? this.getWalletName() : `This wallet is not backed up.\nTap here to backup now.`}</Text>
+													style={styles.cryptoValue}>{this.hasBackedUpWallet() ? this.getWalletName() : `このウォレットはバックアップされていません\nタップしてバックアップしませう`}</Text>
 											</TouchableOpacity>
 											<Header
 												fiatValue={this.getFiatBalance()}
@@ -2323,7 +2323,7 @@ export default class App extends Component {
 							style={styles.modal}
 						>
 							<View style={styles.centerContent}>
-								<Text style={styles.boldText}>Do you want to login to:</Text>
+								<Text style={styles.boldText}>ログイン先:</Text>
 								<Text
 									style={[styles.text, {
 										marginTop: 10,
@@ -2347,7 +2347,7 @@ export default class App extends Component {
 							style={styles.modal}
 						>
 							<TouchableOpacity activeOpacity={1} onPress={Keyboard.dismiss} style={styles.centerContent}>
-								<Text style={styles.boldText}>BIP38 encrypted key detected:</Text>
+								<Text style={styles.boldText}>BIP38秘密鍵が認識されました。:</Text>
 								<TextInput
 									placeholder="Please enter your BIP38 passphrase here."
 									style={styles.textInput}

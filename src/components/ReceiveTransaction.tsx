@@ -170,8 +170,8 @@ const _ReceiveTransaction = ({ selectedCrypto = "bitcoin", selectedCurrency = "u
 	return (
 		<View style={styles.container}>
 			<View style={styles.topHalf}>
-      	<Text style={[styles.header]}>Receive {cryptoCurrency}</Text>
-        <Text type="text" style={styles.subHeader}>To protect your privacy, your address will change once it receives a payment.</Text>
+      	<Text style={[styles.header]}>うけとる {cryptoCurrency}</Text>
+        <Text type="text" style={styles.subHeader}>安全な取引のため、取引ごとにアドレスが変わります。</Text>
 			</View>
 			<View style={styles.topHalf}>
 				<ShareButtons

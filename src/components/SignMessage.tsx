@@ -103,7 +103,7 @@ const _SignMessage = (
 
 				<View style={{ flex: 1, width: "80%", alignItems: "center" }}>
 					<View style={{ paddingVertical: 10 }} />
-					<Text type="white" style={styles.header}>Sign message using:</Text>
+					<Text type="white" style={styles.header}>署名に使うアドレス:</Text>
 					<View style={{ paddingVertical: 2.5 }} />
 					<TouchableOpacity
 						onPress={() => setDisplayAddressModal(true)}
@@ -116,11 +116,11 @@ const _SignMessage = (
 
 				<View style={{ flex: 1, width: "80%" }}>
 					<View style={{ paddingVertical: 15 }} />
-					<Text type="white" style={styles.header}>Message:</Text>
+					<Text type="white" style={styles.header}>メッセージ:</Text>
 					<View style={{ paddingVertical: 2.5 }} />
 				</View>
 				<TextInput
-					placeholder="Please enter the message that you wish to sign here..."
+					placeholder="ここにあったけえメッセージを書いて..."
 					style={styles.textInput}
 					selectionColor={colors.lightPurple}
 					autoCapitalize="none"

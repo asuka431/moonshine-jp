@@ -126,8 +126,8 @@ const _TransactionRow = (
 		<TouchableOpacity onPress={() => onTransactionPress(id)} style={[styles.container, {borderColor: `${getCoinData({selectedCrypto:coin}).color}99`}]}>
 			<View type="gray3" style={styles.header}>
 
-			{type === 'received' && <Text style={[styles.labelText, styles.receivedText]}>received</Text>}
-			{type === 'sent' && <Text style={[styles.labelText, styles.sentText]}>sent</Text>}
+			{type === 'received' && <Text style={[styles.labelText, styles.receivedText]}>受取済</Text>}
+			{type === 'sent' && <Text style={[styles.labelText, styles.sentText]}>送付済</Text>}
 				<Text style={[ styles.labelSubtext ]}> via</Text>
 				<Text style={[ styles.labelSubtext ]}> txid</Text>
 				<Text style={[ styles.labelText ]}> {txidText}</Text>
@@ -135,7 +135,7 @@ const _TransactionRow = (
 				<Text style={[ styles.labelSubtext ]}> to</Text>
 
 
-				<Text style={[ styles.labelSubtext ]}> address</Text>
+				<Text style={[ styles.labelSubtext ]}> アドレス</Text>
 				<Text style={[ styles.labelText ]}> {addressText}</Text>
 
 
@@ -146,12 +146,12 @@ const _TransactionRow = (
 				<View style={styles.col1}>
 					{/*<Text style={[styles.text, { fontWeight, fontSize: normalize(14)  }]}>{label}</Text>*/}
 					<Text style={[styles.dateText]}>{moment.unix(date).format('l @ h:mm a')}</Text>
-					<Text style={[styles.smallText]}>{getConfirmations()} blocks ago</Text>
+					<Text style={[styles.smallText]}>{getConfirmations()} ブロック前</Text>
 				</View>
 				<View style={styles.col2}>
 					<Text style={[styles.balanceText]}>{type === "received" ? "+" : "-"}{getCryptoAmountLabel()}</Text>
 
-				{isBlacklisted &&<Text style={[styles.text, { color: "red", fontWeight: "bold", fontSize: normalize(12) }]}>locked from spending</Text> ||  Number(exchangeRate) !== 0 &&<Text style={[styles.subBalance, { fontWeight }]}>{getFiatAmountLabel()}</Text>  }
+				{isBlacklisted &&<Text style={[styles.text, { color: "red", fontWeight: "bold", fontSize: normalize(12) }]}>支払いがロック中</Text> ||  Number(exchangeRate) !== 0 &&<Text style={[styles.subBalance, { fontWeight }]}>{getFiatAmountLabel()}</Text>  }
 
 
 					{Number(exchangeRate) === 0 && <Text></Text> }
@@ -166,7 +166,7 @@ const _TransactionRow = (
 			{messages.length > 0 &&
 			<View style={styles.row}>
 				<View style={[styles.col1, { flex: 0.6 }]}>
-					<Text style={[styles.text, { fontWeight, fontSize: normalize(16)  }]}>Message:</Text>
+					<Text style={[styles.text, { fontWeight, fontSize: normalize(16)  }]}>あったけえメッセージ:</Text>
 				</View>
 				<View style={[styles.col2, { flex: 1 }]}>
 					<Text style={[styles.text, { fontWeight }]}>{getMessages()}</Text>

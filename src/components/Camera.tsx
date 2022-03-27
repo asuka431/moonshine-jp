@@ -25,8 +25,8 @@ const _Camera = ({ onBarCodeRead = () => null, onClose = () => null }: CameraCom
 	const notAuthorizedView = (
 		<View style={styles.notAuthorizedView}>
 			<EvilIcon name={"exclamation"} size={60} />
-			<Text style={[styles.boldText, { marginVertical: 10 }]}>It appears I do not have permission to access your camera.</Text>
-			<Text style={styles.text}>To utilize this feature in the future you will need to enable camera permissions for this app from your phones settings.</Text>
+			<Text style={[styles.boldText, { marginVertical: 10 }]}>カメラにアクセスすることができませんでした...</Text>
+			<Text style={styles.text}>機能を有効にするにはアプリ設定からアクセスを許可してください。</Text>
 		</View>
 	);
 

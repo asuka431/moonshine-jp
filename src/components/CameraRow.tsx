@@ -68,7 +68,7 @@ const _CameraRow = ({ onSendPress = () => null, onReceivePress = () => null, onC
 	return (
 		<View style={[styles.container, style]}>
 			<TouchableOpacity type="background" onPress={_onSendPress} style={{...styles.leftItem, ...brandStyle}}>
-				<Text type="text" style={styles.text}>Send</Text>
+				<Text type="text" style={styles.text}>送る</Text>
 			</TouchableOpacity>
 			<View style={styles.centerItem}>
 				<TouchableHighlight 
@@ -83,7 +83,7 @@ const _CameraRow = ({ onSendPress = () => null, onReceivePress = () => null, onC
 				</TouchableHighlight>
 			</View>
 			<TouchableOpacity type="background" onPress={_onReceivePress} style={{...styles.rightItem, ...brandStyle}}>
-				<Text type="text" style={styles.text}>Receive</Text>
+				<Text type="text" style={styles.text}>うけとる</Text>
 			</TouchableOpacity>
 		</View>
 	);

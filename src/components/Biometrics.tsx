@@ -19,9 +19,9 @@ const GetIcon = ({ biometricTypeSupported = "", retryAuthentication = () => null
 				<TouchableOpacity activeOpacity={0.6} onPress={retryAuthentication} style={styles.container}>
 					<MaterialCommunityIcons type="white" name={"face"} size={65} />
 					<Text type="white" style={styles.text}>
-						FaceID Enabled
+						顔認証成功！イケメン！
 					</Text>
-					<Text type="white" style={styles.smallText}>Retry</Text>
+					<Text type="white" style={styles.smallText}>もう一度</Text>
 				</TouchableOpacity>
 			);
 		}
@@ -30,9 +30,9 @@ const GetIcon = ({ biometricTypeSupported = "", retryAuthentication = () => null
 				<TouchableOpacity activeOpacity={0.6} onPress={retryAuthentication} style={styles.container}>
 					<Ionicons type="white" name={"ios-finger-print"} size={65} />
 					<Text type="white" style={styles.text}>
-						TouchID Enabled
+						指紋認証成功
 					</Text>
-					<Text type="white" style={styles.smallText}>Retry</Text>
+					<Text type="white" style={styles.smallText}>もう一度</Text>
 				</TouchableOpacity>
 			);
 		}
@@ -40,9 +40,9 @@ const GetIcon = ({ biometricTypeSupported = "", retryAuthentication = () => null
 			<TouchableOpacity activeOpacity={0.6} onPress={retryAuthentication} style={styles.container}>
 				<Ionicons type="white" name={"ios-finger-print"} size={65} />
 				<Text type="white" style={styles.text}>
-					It appears that your device does not support Biometric security.
+					あなたのデバイスは生体認証機能に対応していないかも...
 				</Text>
-				<Text type="white" style={styles.smallText}>Retry</Text>
+				<Text type="white" style={styles.smallText}>もう一度</Text>
 			</TouchableOpacity>
 		);
 	} catch (e) {
@@ -50,7 +50,7 @@ const GetIcon = ({ biometricTypeSupported = "", retryAuthentication = () => null
 			<View style={styles.container}>
 				<Ionicons type="white" name={"ios-finger-print"} size={65} />
 				<Text type="white" style={styles.text}>
-					It appears that your device does not support Biometric security.
+				あなたのデバイスは生体認証機能に対応していないかも...
 				</Text>
 			</View>
 		);

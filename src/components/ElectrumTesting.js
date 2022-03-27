@@ -161,7 +161,7 @@ class ElectrumTesting extends PureComponent<Props> {
 					style={styles.clearButton}
 				>
 					<Text style={{ color: colors.white, fontSize: 12 }}>
-						Clear
+						クリア
 					</Text>
 				</TouchableOpacity>
 			);

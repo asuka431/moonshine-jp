@@ -899,12 +899,12 @@ class Settings extends PureComponent {
 						<TouchableOpacity activeOpacity={1} onPress={Keyboard.dismiss} style={styles.container}>
 
 
-							<Text style={[styles.version]}>{`eCoinCore Mobile Version: ${version}\nby the Canada eCoin developers\nfind us on keybase.io/team/CanadaeCoin`}</Text>
+							<Text style={[styles.version]}>{`Wallet Version: ${version}\nby the someone\nmade with love`}</Text>
 
 							<View style={{ alignItems: "center", justifyContent: "center" }}>
 								<View style={[styles.header]}>
 
-									<Text style={[styles.title, { fontWeight: "bold" }]}>General Settings</Text>
+									<Text style={[styles.title, { fontWeight: "bold" }]}>一般設定</Text>
 
 									<TouchableOpacity onPress={() => this.setState({ displayGeneralHelp: true })} style={{ marginLeft: 10, alignItems: "center", justifyContent: "center" }}>
 										<MaterialCommunityIcons name={"help-circle-outline"} size={26} />
@@ -970,7 +970,7 @@ class Settings extends PureComponent {
 							<View style={{ alignItems: "center", justifyContent: "center" }}>
 								<View style={styles.header}>
 
-									<Text style={[styles.title, { fontWeight: "bold", textAlign: "center" }]}>Wallet Settings</Text>
+									<Text style={[styles.title, { fontWeight: "bold", textAlign: "center" }]}>ウォレット</Text>
 
 									<TouchableOpacity onPress={() => this.setState({ displayWalletHelp: true })} style={{ marginLeft: 10, alignItems: "center", justifyContent: "center" }}>
 										<MaterialCommunityIcons name={"help-circle-outline"} size={26} color={colors.white} />
@@ -1087,7 +1087,7 @@ class Settings extends PureComponent {
 
 							<View style={{ alignItems: "center", justifyContent: "center" }}>
 								<View style={[styles.header, { marginTop: 20 }]}>
-									<Text style={[styles.title, { fontWeight: "bold" }]}>Support</Text>
+									<Text style={[styles.title, { fontWeight: "bold" }]}>サポート</Text>
 								</View>
 							</View>
 
@@ -1209,8 +1209,8 @@ class Settings extends PureComponent {
 				>
 					{this.props.settings.biometricsIsSupported &&
 					<View style={styles.helpRow}>
-						<Text type="text2" style={styles.helpTitle}>Enable FaceID:</Text>
-						<Text type="text2" style={styles.helpText}>This option allows you to toggle FaceID on/off as a form of authentication when opening this app.</Text>
+						<Text type="text2" style={styles.helpTitle}>FaceIDを使用:</Text>
+						<Text type="text2" style={styles.helpText}>このオプションをonにすればFaceIDでの認証が起動時に行われます</Text>
 					</View>}
 					{generalHelpItems.map(({ title, text }) => (
 						<View key={title} style={styles.helpRow}>
@@ -1235,7 +1235,7 @@ class Settings extends PureComponent {
 					<View style={styles.helpRow}>
 						<Text type="text2" style={styles.helpTitle}>Donate:</Text>
 						<Text type="text2" style={styles.helpText}>
-							Tapping this will redirect you to the &quot;Send Transaction&quot; view with a pre-filled address to donate to. I built this app to learn and have fun. I never intend to monetize or turn a profit on this app so if you found it useful please consider donating.
+							ここをタップすれば &quot;Send Transaction&quot; 寄付アドレスに移動します. 翻訳者ではなく 海外のオリジナル開発者のほうにリンクが飛びますのでご了承ください.
 						</Text>
 					</View>}
 					<View style={{ paddingVertical: "40%" }} />

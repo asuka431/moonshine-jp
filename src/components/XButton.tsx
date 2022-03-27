@@ -40,7 +40,7 @@ const _XButton = ({ onPress = () => null, size = normalize(28), style = {} }: XB
 	return (
 		<TouchableOpacity onPress={_onPress} style={[styles.container, { height: size, width: size * 3, ...style }]}>
 			<View style={[styles.circle, { height: size, width: size * 3 }]}>
-				<Text type="text" style={styles.text}>back</Text>
+				<Text type="text" style={styles.text}>戻る</Text>
 			</View>
 		</TouchableOpacity>
 	);

@@ -196,11 +196,11 @@ const _Pin = ({ onSuccess = () => null, updateSettings = () => null, wipeDevice 
 						<View style={{alignItems: "center", justifyContent: "center"}}>
 							{invalidPin &&
 							<Text type="white" style={styles.text}>
-								Pins Did Not Match
+								Pinが違います
 							</Text>
 							}
 							<Text type="white" style={[styles.text, { fontSize: 24 }]}>
-								Please Enter Your Pin
+								Pinを入力
 							</Text>
 						</View>
 					);
@@ -208,7 +208,7 @@ const _Pin = ({ onSuccess = () => null, updateSettings = () => null, wipeDevice 
 					return (
 						<View style={{ alignItems: "center", justifyContent: "center" }}>
 							<Text type="white" style={[styles.text, { fontSize: 24 }]}>
-								Please Re-Enter Your Pin
+								もう一度Pinを入力..
 							</Text>
 						</View>
 					);
@@ -217,7 +217,7 @@ const _Pin = ({ onSuccess = () => null, updateSettings = () => null, wipeDevice 
 			return (
 				<View style={{ alignItems: "center", justifyContent: "center" }}>
 					<Text type="white" style={styles.header}>
-						Enter pin:
+						Pinを入力:
 					</Text>
 					<Text type="white" style={styles.text}>
 						{`Attempts Remaining: ${attemptsRemaining}`}

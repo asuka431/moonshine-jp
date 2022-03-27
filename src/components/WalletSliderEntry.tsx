@@ -255,7 +255,7 @@ const _WalletSliderEntry = ({ walletId = "bitcoin", wallet = { wallets: {}, sele
 					})}
 					{Object.keys(wallet.wallets).length > 1 &&
 					<TouchableOpacity onPress={delWallet} style={styles.deleteButton}>
-						<Text style={[styles.text, { color: colors.danger }]}>Delete Wallet</Text>
+						<Text style={[styles.text, { color: colors.danger }]}>ウォレットを削除</Text>
 					</TouchableOpacity>}
 
 

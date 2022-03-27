@@ -127,8 +127,8 @@ class TransactionDetail extends PureComponent {
 			const nextAvailableAddress = this.props.wallet.wallets[selectedWallet].addresses[selectedCrypto][addressIndex].address;
 			return (
 				<View style={{ marginTop: 20, alignItems: "center", justifyContent: "center" }}>
-					<Text type="text2" style={[styles.text, { textAlign: "center", ...systemWeights.bold }]}>Transaction taking too long?</Text>
-					<Text type="text2" style={[styles.text, { textAlign: "center", ...systemWeights.regular }]}>Cancel the transaction or increase the fee for a faster transaction:</Text>
+					<Text type="text2" style={[styles.text, { textAlign: "center", ...systemWeights.bold }]}>ちょっと時間かかりすぎかも</Text>
+					<Text type="text2" style={[styles.text, { textAlign: "center", ...systemWeights.regular }]}>キャンセルするか手数料を増やしてお試しください。:</Text>
 					<View style={[styles.row, { alignItems: "center", justifyContent: "center" }]}>
 						<TouchableOpacity onPressIn={() => this.updateRbfValue("decrease")} onPressOut={this.stopRbfValueTimer} style={styles.icon}>
 							<EvilIcon type="text2" name={"minus"} size={42} />
@@ -597,15 +597,15 @@ class TransactionDetail extends PureComponent {
 				<ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} style={{ flex: 0.9 }}>
 					<View style={styles.transactionData}>
 						<View style={styles.headerContainer}>
-							<Text style={styles.header}>{getCoinData({selectedCrypto}).label} Transaction</Text>
+							<Text style={styles.header}>{getCoinData({selectedCrypto}).label} トランザクション</Text>
 		</View>
 							
 
 
 <TouchableOpacity style={styles.row} onPress={() => this.openAddress(address)}>
 	<View style={[styles.col1]}>
-		{type === "sent" && <Text style={[styles.title]}>Sent from (tap to explore wallet)</Text>}
-		{type === "received" && <Text style={[styles.title]}>received to (tap to explore wallet)</Text>}
+		{type === "sent" && <Text style={[styles.title]}>送り主(webで確認))</Text>}
+		{type === "received" && <Text style={[styles.title]}>受け取り主 (webで確認)</Text>}
 
 
 		<Text style={styles.code}>{prettifyAddress(address)}</Text>
@@ -624,26 +624,26 @@ class TransactionDetail extends PureComponent {
 
 <TouchableOpacity style={styles.row} onPress={() => this.openBlock(blockHeight)}>
 	<View style={[styles.col1]}>
-		<Text style={[styles.title]}>status: (tap to explore block)</Text>
-		<Text style={[styles.text]}>{capitalize(status)} within block { formatNumber(blockHeight) }</Text>						
+		<Text style={[styles.title]}>ステータス: (webで確認)</Text>
+		<Text style={[styles.text]}> { formatNumber(blockHeight) }にて。状態:{capitalize(status)} </Text>						
 		<Text style={[styles.subtext]}>{moment.unix(timestamp).format('dddd, MMMM D, YYYY h:mm A Z')}</Text>						
-		<Text style={[styles.subtext]}>({this.getConfirmations()} blocks ago/confirmations)</Text>						
+		<Text style={[styles.subtext]}>({this.getConfirmations()} ブロック前/承認数)</Text>						
 	</View>
 </TouchableOpacity>
 
 
 <TouchableOpacity style={styles.row} onPress={() => openTxId(hash, selectedCrypto)}>
 	<View style={[styles.col1]}>
-		<Text style={[styles.title]}>transaction: (tap to explore tx)</Text>
+		<Text style={[styles.title]}>トランザクション: (webで確認)</Text>
 
 
-						{type === "sent" && <Text style={[styles.text]}>Spent {totalSent}</Text>}
-						{type === "sent" && <Text style={[styles.text]}>Sent {amountSent}</Text>}
-						{type === "received" && <Text style={[styles.text]}>Received {amountReceived}</Text>}
+						{type === "sent" && <Text style={[styles.text]}>送り中 {totalSent}</Text>}
+						{type === "sent" && <Text style={[styles.text]}>送った {amountSent}</Text>}
+						{type === "received" && <Text style={[styles.text]}>もらった {amountReceived}</Text>}
 
-		<Text style={[styles.subtext]}>inputs: { this.getAmount(transactionInputAmount) }</Text>		
-		<Text style={[styles.subtext]}>outputs: { this.getAmount(transactionOutputAmount) }</Text>		
-		<Text style={[styles.subtext]}>fee: { transactionFee }</Text>						
+		<Text style={[styles.subtext]}>入力: { this.getAmount(transactionInputAmount) }</Text>		
+		<Text style={[styles.subtext]}>出力: { this.getAmount(transactionOutputAmount) }</Text>		
+		<Text style={[styles.subtext]}>手数料: { transactionFee }</Text>						
 
 
 	</View>
@@ -652,7 +652,7 @@ class TransactionDetail extends PureComponent {
 
 <TouchableOpacity style={styles.row} onPress={() => openTxId(hash, selectedCrypto)}>
 	<View style={[styles.col1]}>
-		<Text style={[styles.title]}>txid/hash: (tap to explore tx)</Text>
+		<Text style={[styles.title]}>txid/hash: (webで確認)</Text>
 		<Text style={[styles.code]}>{ firstHalf(hash) }</Text>		
 		<Text style={[styles.code]}>{ secondHalf(hash) }</Text>		
 	</View>

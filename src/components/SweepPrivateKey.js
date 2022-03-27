@@ -902,7 +902,7 @@ class SendTransaction extends PureComponent {
 				<View style={{ flex: 1 }}>
 
 					<View style={{ alignItems: "center", justifyContent: "center" }}>
-						<Text type="white" style={[styles.header, { marginBottom: 5 }]}>Amount Detected:</Text>
+						<Text type="white" style={[styles.header, { marginBottom: 5 }]}>総量:</Text>
 						<Text type="white" style={styles.largeText}>{`${this.props.settings.fiatSymbol}${this.state.fiatBalance.balance || 0}`}</Text>
 						<Text type="white" style={styles.largeText}>{`${this.state.cryptoBalance.balance || 0} ${this.state.cryptoUnitLabel}`}</Text>
 					</View>
@@ -911,19 +911,19 @@ class SendTransaction extends PureComponent {
 
 						<View style={styles.row}>
 							<View style={{ flex: 1, justifyContent: "flex-end", alignItems: "flex-start" }}>
-								<Text type="white" style={[styles.largeText, { fontWeight: "bold" }]}>Sending To: <Text type="white" style={styles.largeText}>{`Wallet ${this.props.wallet.walletOrder.indexOf(this.props.wallet.selectedWallet)}`}</Text></Text>
+								<Text type="white" style={[styles.largeText, { fontWeight: "bold" }]}>送り先: <Text type="white" style={styles.largeText}>{`Wallet ${this.props.wallet.walletOrder.indexOf(this.props.wallet.selectedWallet)}`}</Text></Text>
 							</View>
 						</View>
 
 						<View style={styles.row}>
 							<View style={{ flex: 1, justifyContent: "flex-end", alignItems: "flex-start" }}>
-								<Text type="white" style={[styles.largeText, { fontWeight: "bold" }]}>Amount: <Text type="white" style={styles.largeText}>{`${this.state.cryptoBalance.balanceMinusFees} ${this.state.cryptoUnitLabel}`}</Text></Text>
+								<Text type="white" style={[styles.largeText, { fontWeight: "bold" }]}>送る量: <Text type="white" style={styles.largeText}>{`${this.state.cryptoBalance.balanceMinusFees} ${this.state.cryptoUnitLabel}`}</Text></Text>
 							</View>
 						</View>
 
 						<View style={[styles.row, { marginTop: 20, marginBottom: 1 }]}>
 							<View style={{ flex: 1.2 }}>
-								<Text type="white" style={styles.text}>Fee: {this.state.fee || this.state.recommendedFee}sat/B </Text>
+								<Text type="white" style={styles.text}>手数料: {this.state.fee || this.state.recommendedFee}sat/B </Text>
 							</View>
 							<View style={{ flex: 1 }}>
 								<Text type="white" style={[styles.text, { textAlign: "center" }]}>{this.props.settings.fiatSymbol}{this.state.totalFiatFee}</Text>

@@ -42,16 +42,16 @@ const _Welcome = ({ onClose = () => null, children = <View /> } = {}) => {
 
 				<Text style={[styles.subHeader, { textAlign: "center" }]}>Thank you for trying the Canada eCoin experience.</Text>
 
-				<Text style={styles.subHeader}>BETA TESTERS ONLY</Text>
-				<Text style={styles.text}>This software is currently in the beta testing phase.  Please refrain from storing any value in this software while not testing it.  </Text>
-				<Text style={styles.subHeader}>Will you join us?</Text>
+				<Text style={styles.subHeader}>試験版</Text>
+				<Text style={styles.text}>バグがあった場合の保障は出来かねますので大金を放り込まない・過度に信用しないスタイルでお願いします  </Text>
+				<Text style={styles.subHeader}>手伝ってくれる？</Text>
 
-				<Text style={styles.text}>Find us in our community social channels:</Text>
+				<Text style={styles.text}>バグの報告をお願いします:</Text>
 				<Text
-					onPress={() => Linking.openURL("https://twitter.com/CanadaeCoin").catch((e) => console.log(e))}
+					onPress={() => Linking.openURL("https://github.com/asuka431").catch((e) => console.log(e))}
 					style={[styles.text, { marginTop: 5 }]}
 				>
-					<Text style={styles.semiBoldText}>Twitter: </Text>@CanadaeCoin
+					<Text style={styles.semiBoldText}>Twitter: </Text>@someone
 				</Text>
 				<Text
 					onPress={() => Linking.openURL("https://discord.gg/Z8DufnQ").catch((e) => console.log(e))}
@@ -60,7 +60,7 @@ const _Welcome = ({ onClose = () => null, children = <View /> } = {}) => {
 					<Text style={styles.semiBoldText}>Discord:</Text>discord.gg/Z8DufnQ
 				</Text>
 				<Text
-					onPress={() => Linking.openURL("http://keybase.io/team/CanadaeCoin").catch((e) => console.log(e))}
+					onPress={() => Linking.openURL("http://github.com/asuka431").catch((e) => console.log(e))}
 					style={[styles.text, { marginTop: 5 }]}
 				>
 					<Text style={styles.semiBoldText}>Keybase: </Text>keybase.io/team/CanadaeCoin

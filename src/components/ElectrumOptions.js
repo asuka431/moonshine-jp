@@ -305,7 +305,7 @@ class ElectrumOptions extends PureComponent {
 			<View style={styles.container}>
 				<ScrollView style={styles.container} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
 					<TouchableOpacity activeOpacity={1} style={styles.container}>
-						<Text style={styles.header}>Custom Electrum Servers</Text>
+						<Text style={styles.header}>サーバーを変更</Text>
 						<FlatList
 							contentContainerStyle={{ paddingBottom: height * 0.3 }}
 							data={this.state.availableCoins}

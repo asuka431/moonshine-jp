@@ -74,7 +74,7 @@ const _VerifyMessage = (
 			<View style={styles.contentContainer}>
 				<View style={styles.textInputContainer}>
 
-					<Text type="white" style={styles.text}>Address:</Text>
+					<Text type="white" style={styles.text}>アドレス:</Text>
 					<TextInput
 						placeholder="Address"
 						style={styles.textInput}
@@ -92,7 +92,7 @@ const _VerifyMessage = (
 						blurOnSubmit={false}
 					/>
 
-					<Text type="white" style={styles.text}>Message:</Text>
+					<Text type="white" style={styles.text}>あったけえメッセージ:</Text>
 					<TextInput
 						placeholder="Message"
 						style={styles.textInput}
@@ -123,7 +123,7 @@ const _VerifyMessage = (
 					/>
 
 					<Animated.View style={[styles.animation, {opacity: animationOpacity}]}>
-						<Text type="white" style={styles.text}>{dataIsValid ? "Valid Signature!" : "Invalid Signature"}</Text>
+						<Text type="white" style={styles.text}>{dataIsValid ? "有効だあ！" : "ダメだあ！"}</Text>
 						<LottieView
 							ref={animation => {
 								// @ts-ignore

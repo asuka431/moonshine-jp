@@ -111,7 +111,7 @@ const _FeeEstimate = (
 	return (
 		<View style={styles.container}>
 			<View style={styles.header}>
-				<Text style={styles.title}>Current Fee Estimates</Text>
+				<Text style={styles.title}>手数料推定:</Text>
 			</View>
 			<View style={styles.content}>
 				{feeEstimates && feeEstimates.length > 5 && feeEstimates.map(({ label, sats, fiat}) => (

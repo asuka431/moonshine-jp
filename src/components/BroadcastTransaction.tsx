@@ -95,7 +95,7 @@ const _BroadcastTransaction = ({ broadcastTransaction = _defaultBroadcastTransac
 				
 				{hash !== "" &&
 				<Text style={[styles.text, { marginVertical: 25 }]}>
-					Success!
+					成功!
 				</Text>}
 				
 				{hash !== "" &&

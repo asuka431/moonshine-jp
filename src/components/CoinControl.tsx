@@ -79,7 +79,7 @@ const _UtxoRow = (
 			>
 				{isBlacklisted &&
 				<Text type="warning" style={[styles.header, { ...systemWeights.semibold, alignSelf: "center" }]}>
-					UTXO Blacklisted
+					UTXOがブラックリストされてる...!?
 				</Text>}
 
 				<View style={{ flexDirection: "row" }}>
@@ -125,7 +125,7 @@ const _UtxoRow = (
 							style={{ paddingVertical: 2 }}
 						>
 							<Text style={[styles.header, { textDecorationLine: "underline" }]}>
-								View Transaction
+								取引履歴
 							</Text>
 						</TouchableOpacity>
 
@@ -202,7 +202,7 @@ const _CoinControl = (
 		<View style={[styles.container, { ...style }]}>
 
 			<Text type="text2" style={styles.coinControlText}>
-				Amount available to spend:
+				今送れる残高:
 			</Text>
 			<Text type="text2" style={[styles.coinControlHeader, { marginTop: 10, marginBottom: 2 }]}>
 				{getAvailableToSpendText()}
@@ -210,7 +210,7 @@ const _CoinControl = (
 			<Text type="text2" style={[styles.coinControlHeader, { marginBottom: 10 }]}>
 				{`Fiat: ${fiatSymbol}${getFiatBalance({ balance: whiteListedUtxosBalance, exchangeRate })}`}
 			</Text>
-			<Text style={[styles.coinControlText, { fontSize: 20 }]}>What coins would you like to use in this transaction?</Text>
+			<Text style={[styles.coinControlText, { fontSize: 20 }]}>どのコインを使うんだい？</Text>
 			<View style={{ width: "100%", height: 1.5, backgroundColor: colors.darkPurple, marginVertical: 5 }} />
 
 			<FlatList

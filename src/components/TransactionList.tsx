@@ -170,7 +170,7 @@ const _TransactionList = (
 		<View style={styles.container}>
 			{!hasTransactions() &&
 			<View style={styles.emptyComponentContainer}>
-				<Text style={styles.text}>No transactions to display...</Text>
+				<Text style={styles.text}>まだ取引がありません...</Text>
 			</View>
 			}
 			{hasTransactions() &&

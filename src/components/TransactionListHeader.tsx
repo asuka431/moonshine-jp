@@ -47,7 +47,7 @@ const _TransactionListHeader = (
 					onPress={transactionsAreExpanded ? resetView : expandTransactions}
 					style={[styles.centerContent, { flex: 2 }]}
 				>
-					<Text style={styles.boldText}>Transactions</Text>
+					<Text style={styles.boldText}>トランザクション</Text>
 				</TouchableOpacity>
 				
 				<TouchableOpacity
