@@ -130,7 +130,7 @@ const _Header = ({compress = false, selectedCurrency = "", fiatSymbol = "$", sel
 				</View> 
 
 			{isOnline !== true &&
-				<Text style={[styles.errorRow, { marginTop: 10, fontSize: fontSize/2.5 }]}>Currently Offline</Text>
+				<Text style={[styles.errorRow, { marginTop: 10, fontSize: fontSize/2.5 }]}>:オフラインのようです...</Text>
 			}
 		</TouchableOpacity>
 	);

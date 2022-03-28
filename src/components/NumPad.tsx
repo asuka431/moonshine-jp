@@ -85,7 +85,7 @@ const _NumPad = ({ value = "", onPress = () => null, style = {}, buttonStyle = {
 			</View>
 			<View style={[styles.row, { marginBottom: 0 }]}>
 				<TouchableOpacity onPress={() => handleClear()} activeOpacity={ACTIVE_OPACITY} style={[styles.buttonContainer, { borderWidth: 0 }, buttonStyle]}>
-					<Text type="white" style={styles.button}>Clear</Text>
+					<Text type="white" style={styles.button}>クリア</Text>
 				</TouchableOpacity>
 			</View>
 		</View>

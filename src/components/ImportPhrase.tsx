@@ -171,7 +171,7 @@ const _ImportPhrase = ({ createNewWallet = () => null, onBack = () => null }: Im
 					</Text>
 				</TouchableOpacity>
 				<TextInput
-					placeholder="パスフレーズを半角スペース開けて入力s手ください 例: (project globe magnet)"
+					placeholder="パスフレーズを半角スペース開けて入力してください 例: (project globe magnet)"
 					style={styles.textInput}
 					selectionColor={colors.lightPurple}
 					autoCapitalize="none"
