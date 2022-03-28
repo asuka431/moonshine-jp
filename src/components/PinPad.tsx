@@ -99,7 +99,7 @@ const _Pin = ({ onSuccess = () => null, updateSettings = () => null, wipeDevice 
 			if (pin.error === false && value !== pin.data.password) {
 				if (attemptsRemaining <= 1) {
 					//Wipe device. Too many attempts
-					console.log("Pin attempt threshold breached. Wiping device. Hope you made a backup, friend.");
+					console.log("やっちゃいましたね。五回目の入力失敗なのでデータが完全削除されます。バックアップとっていますように。");
 					vibrate("default");
 					await _wipeDevice();
 					await updateSettings({ pinAttemptsRemaining: 5 });
@@ -268,7 +268,7 @@ const _Pin = ({ onSuccess = () => null, updateSettings = () => null, wipeDevice 
 
 			<View style={[styles.row, { marginTop: 20 }]}>
 				<TouchableOpacity onPress={handleSubmit} activeOpacity={ACTIVE_OPACITY} style={styles.submitButton}>
-					<Text type="white" style={styles.text}>Submit</Text>
+					<Text type="white" style={styles.text}>OK</Text>
 				</TouchableOpacity>
 			</View>
 		</View>
