@@ -51,12 +51,12 @@ const _BroadcastTransaction = ({ broadcastTransaction = _defaultBroadcastTransac
 		try {
 			if (hash) setHash("");
 			if (!transaction) {
-				alert("Please enter a transaction to broadcast.");
+				alert("発信するトランザクションを入力してください。");
 				return;
 			}
 			let sendTransactionResult = await broadcastTransaction({ txHex: transaction, sendTransactionFallback, selectedCrypto });
 			if (sendTransactionResult.error) {
-				alert("There was an error broadcasting this transaction. Please check your transaction and try again.");
+				alert("発信にエラーが発生しました。トランザクションを確認し、再度お試しください。");
 			} else {
 				setTransaction("");
 				if (sendTransactionResult.data) setHash(sendTransactionResult.data);
@@ -82,7 +82,7 @@ const _BroadcastTransaction = ({ broadcastTransaction = _defaultBroadcastTransac
 				</View>
 				
 				<TextInput
-					placeholder="Please enter your raw transaction here."
+					placeholder="raw transactionを入力してください。"
 					style={styles.textInput}
 					selectionColor={colors.lightPurple}
 					autoCapitalize="none"

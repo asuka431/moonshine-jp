@@ -122,7 +122,7 @@ const _ImportPhrase = ({ createNewWallet = () => null, onBack = () => null }: Im
 				createNewWallet({ mnemonic: data });
 			} else {
 				await updateCamera({display: false});
-				alert(`Unable to parse the following data:\n${data}`);
+				alert(`${data}\nの取得に失敗しました。`);
 			}
 		} catch (e) {
 			console.log(e);
@@ -133,7 +133,7 @@ const _ImportPhrase = ({ createNewWallet = () => null, onBack = () => null }: Im
 		try {
 			if (displayCamera) updateCamera({ display: false });
 			if (mnemonic === "" || !bip39.validateMnemonic(mnemonic.trim())) {
-				alert("Invalid Mnemonic");
+				alert("不正なMnemonic");
 				return;
 			}
 			createNewWallet({ mnemonic: mnemonic.trim() });
@@ -171,7 +171,7 @@ const _ImportPhrase = ({ createNewWallet = () => null, onBack = () => null }: Im
 					</Text>
 				</TouchableOpacity>
 				<TextInput
-					placeholder="Please enter your mnemonic phrase here with each word seperated by a space... Ex: (project globe magnet)"
+					placeholder="パスフレーズを半角スペース開けて入力s手ください 例: (project globe magnet)"
 					style={styles.textInput}
 					selectionColor={colors.lightPurple}
 					autoCapitalize="none"

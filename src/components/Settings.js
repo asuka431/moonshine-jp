@@ -444,13 +444,13 @@ class Settings extends PureComponent {
 			const walletName = `Wallet ${walletIndex}`;
 			try {
 				if (this.hasBackedUpWallet()) {
-					return `${walletName} last backed up on\n${moment(this.props.wallet.wallets[selectedWallet].walletBackupTimestamp).format('l @ h:mm a')}.`;
+					return `${walletName} 最終バックアップ日\n${moment(this.props.wallet.wallets[selectedWallet].walletBackupTimestamp).format('l @ h:mm a')}.`;
 				}
-				return "Wallet has not\nbeen backed up.";
-			} catch (e) {return "Wallet has not\nbeen backed up.";}
+				return "ウォレットはまだ\nバックアップされていません";
+			} catch (e) {return "ウォレットはまだ\nバックアップされていません";}
 		} catch (e) {
 			console.log(e);
-			return "Wallet has not\nbeen backed up.";
+			return "ウォレットはまだ\nバックアップされていません";
 		}
 	};
 
@@ -526,7 +526,7 @@ class Settings extends PureComponent {
 				hasAddresses = this.props.wallet.wallets[selectedWallet].addresses[selectedCrypto].length > 0;
 			} catch (e) {}
 			if (this.state.rescanningWallet || !hasAddresses) {
-				alert("Currently generating addresses for signing, one moment please.");
+				alert("署名用アドレスを生成中, しばしお待ち下さい");
 				return;
 			}
 
@@ -768,7 +768,7 @@ class Settings extends PureComponent {
 		try {
 			return { host: this.props.settings.currentPeer.host, port: this.props.settings.currentPeer.port };
 		} catch {
-			return { host: "No peer connected", port: "" };
+			return { host: "有効な接続がありません", port: "" };
 		}
 	};
 
@@ -818,7 +818,7 @@ class Settings extends PureComponent {
 			if (result.error && rollbackAttempt === false) {
 				//Roll back and notify user
 				this.updateFiatCurrency(previouslySelectedCurrency, true);
-				setTimeout(() => {alert(`We're having some trouble getting the exchange rate for ${currency.toUpperCase()}. ${capitalize(selectedService)} is either having some technical difficulties or ${currency.toUpperCase()} is no longer supported. Otherwise, please check your connection and try again`);}, 500);}
+				setTimeout(() => {alert(` ${currency.toUpperCase()}での残高取得に失敗しました。 ${capitalize(selectedService)} での表示はサポートされていないか ${currency.toUpperCase()} での取引が少ないなどの理由で取得できない可能性があります。`);}, 500);}
 			this.toggleFiatModal({ display: false });
 		} catch {}
 	};
@@ -915,10 +915,10 @@ class Settings extends PureComponent {
 							</View>
 
 							{this.props.settings.biometricsIsSupported &&
-								<SettingSwitch setting="biometrics" value={this.props.settings["biometrics"]} title={`Enable ${this.props.settings.biometricTypeSupported}`} onPress={() => this.toggleSetting("biometrics")} />
+								<SettingSwitch setting="biometrics" value={this.props.settings["biometrics"]} title={` ${this.props.settings.biometricTypeSupported}の使用`} onPress={() => this.toggleSetting("biometrics")} />
 							}
-							<SettingSwitch setting="pin" value={this.props.settings["pin"]} title="Enable Pin" onPress={this.togglePin} />
-							<SettingSwitch setting="theme" value={this.isDarkMode()} title="Dark Mode" onPress={this.toggleTheme} />
+							<SettingSwitch setting="pin" value={this.props.settings["pin"]} title="Pin(パスワード)" onPress={this.togglePin} />
+							<SettingSwitch setting="theme" value={this.isDarkMode()} title="ダークモード" onPress={this.toggleTheme} />
 
 							{/*
 							<SettingSwitch setting="testnet" value={this.props.settings["testnet"]} title="Enable Testnet" onPress={this.toggleTestnet} />
@@ -934,7 +934,7 @@ class Settings extends PureComponent {
 							*/}
 
 							<SettingGeneral
-								value={`Selected Fiat Currency:\n${this.getSelectedCurrency()}`}
+								value={`通貨表示:\n${this.getSelectedCurrency()}`}
 								col1Image={<Fontisto name="money-symbol" style={{ paddingVertical: 2 }} size={32} />}
 								onPress={() => this.toggleFiatModal({ display: true })}
 								valueStyle={{ fontSize: 16, textAlign: "center", fontWeight: "bold" }}
@@ -945,13 +945,13 @@ class Settings extends PureComponent {
 							<SettingSwitch setting="rbf" value={this.props.settings["rbf"]} title="Enable Replace-by-fee" onPress={this.toggleRBF} />
 							 */}
 
-							<SettingSwitch setting="sendTransactionFallback" value={this.props.settings["sendTransactionFallback"]} title="Send Transaction Fallback" onPress={this.toggleSendTransactionFallback} />
+							<SettingSwitch setting="sendTransactionFallback" value={this.props.settings["sendTransactionFallback"]} title="Transaction Fallbackを送信" onPress={this.toggleSendTransactionFallback} />
 
 							<SettingGeneral
 								title=""
-								value="Import Mnemonic Phrase"
+								value="Mnemonic Phraseを追加"
 								onPress={() => this.toggleImportPhrase({ display: true })}
-								col1Image={<MaterialCommunityIcons name="import" size={32} color={colors.purple} />}
+								col1Image={<MaterialCommunityIcons name="インポート" size={32} color={colors.purple} />}
 								col2Style={{flex: 2, alignItems: "center", justifyContent: "center", paddingRight: 10}}
 								valueStyle={{fontSize: 16, textAlign: "center", fontWeight: "bold"}}
 							/>
@@ -960,7 +960,7 @@ class Settings extends PureComponent {
 
 							<SettingGeneral
 								title=""
-								value="Electrum Options"
+								value="サーバー設定"
 								onPress={() => this.toggleElectrumOptions({ display: true })}
 								col1Image={<Fontisto name="atom" size={25} style={{ paddingVertical: 2 }} />}
 								col2Style={{ flex: 2, alignItems: "center", justifyContent: "center", paddingRight: 10 }}
@@ -983,17 +983,17 @@ class Settings extends PureComponent {
 								</View>
 							</View>
 							<TextInputRow
-								title={`Wallet Name (${this.state.walletName.length}/16)`}
+								title={`ウォレット名 (${this.state.walletName.length}/16)`}
 								subTitle={`Wallet ${this.props.wallet.walletOrder.indexOf(selectedWallet)}`}
 								currentValue={this.state.walletName || ""}
 								onChangeText={(walletName) => walletName.length < 17 ? this.setState({walletName}) : null}
 								onPress={this.addWalletName}
 								secureTextEntry={false}
-								submitText="Add Name"
+								submitText="名前を変える"
 							/>
 
 							<HeaderRow
-								header="Connected To:"
+								header="接続するサーバー:"
 								value={`${this.getPeerInfo().host}:${this.getPeerInfo().port}`}
 								onPress={this.reconnectToPeer}
 								col2Loading={this.state.connectingToElectrum || !this.getPeerInfo().host}
@@ -1002,7 +1002,7 @@ class Settings extends PureComponent {
 							/>
 
 							<MultiOptionRow
-								title="Address Type"
+								title="アドレスのタイプ"
 								subTitle={`Path: m/${keyDerivationPath}'/${coinTypePath}'/0'/0/0`}
 								currentValue={addressType}
 								options={[
@@ -1030,21 +1030,21 @@ class Settings extends PureComponent {
 
 							{!this.state.bip39PassphraseIsSet &&
 							<TextInputRow
-								title="BIP39 Passphrase"
-								subTitle="Enter your passphrase here..."
+								title="BIP39パスフレーズ"
+								subTitle="ここにパスフレーズを入力..."
 								currentValue={this.state.bip39Passphrase}
 								onChangeText={(bip39Passphrase) => this.setState({bip39Passphrase})}
 								onPress={this.addBip39Passphrase}
-								submitText="Add Passphrase"
+								submitText="パスフレーズを追加"
 							/>}
 
 							{this.state.bip39PassphraseIsSet &&
 							<MultiOptionRow
-								title="BIP39 Passphrase"
+								title="BIP39パスフレーズ"
 								subTitle="o-o-o-o"
-								currentValue="Remove Passphrase"
+								currentValue="パスフレーズを削除"
 								options={[
-									{value: "Remove Passphrase", onPress: this.removeBip39Passphrase }
+									{value: "パスフレーズを削除", onPress: this.removeBip39Passphrase }
 								]}
 							/>}
 
@@ -1067,17 +1067,17 @@ class Settings extends PureComponent {
 							/>*/}
 
 							<SettingGeneral
-								title="Backup Wallet"
+								title="ウォレットのバックアップ"
 								value={this.getBackupWalletValue()}
 								onPress={() => this.toggleBackupPhrase({ selectedWallet, display: true })}
-								col1Image={<MaterialCommunityIcons type={this.hasBackedUpWallet() ? "text" : "white"} name="wallet" size={32} />}
+								col1Image={<MaterialCommunityIcons type={this.hasBackedUpWallet() ? "text" : "white"} name="ウォレット" size={32} />}
 								col2Style={{ flex: 2, alignItems: "center", justifyContent: "center", paddingRight: 10 }}
 								warning={!this.hasBackedUpWallet()}
 								valueStyle={{ fontSize: 16, textAlign: "center", fontWeight: this.hasBackedUpWallet() ? "normal" : "bold" }}
 							/>
 
 							<SettingGeneral
-								value={`Rescan for ${cryptoLabel} transactions within\nthe selected wallet: "${this.getWalletName()}"`}
+								value={`${cryptoLabel}のトランザクションを\n "${this.getWalletName()}"\nウォレットで読み込む`}
 								col1Loading={this.state.rescanningWallet}
 								col1Image={<MaterialCommunityIcons name="radar" size={32} />}
 								onPress={this.rescanWallet}
@@ -1092,7 +1092,7 @@ class Settings extends PureComponent {
 							</View>
 
 							<SettingGeneral
-								value={`Need Some Help?\nsupport@canadaecoin.foundation`}
+								value={`問題発生はこちらまで\nsupport@canadaecoin.foundation`}
 								col1Image={<FontAwesome name="support" size={32} />}
 								onPress={this.requestHelp}
 								valueStyle={{ fontSize: 14, textAlign: "center", fontWeight: "bold" }}
@@ -1109,7 +1109,7 @@ class Settings extends PureComponent {
 
 
 							<SettingGeneral
-								value={'This wallet is a fork of the Moonshine Wallet, \nmoonshinewallet.com'}
+								value={'このアプリはMoonshine WalletをForkして開発されました。元リンクは以下↓ \nmoonshinewallet.com'}
 								col1Image={<MaterialCommunityIcons name="web" size={32} />}
 								onPress={this.visitWebsite}
 								valueStyle={{ fontSize: 14, textAlign: "center", fontWeight: "bold" }}

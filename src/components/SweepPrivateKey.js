@@ -136,7 +136,7 @@ class SendTransaction extends PureComponent {
 			const validatePrivateKeyResults = await validatePrivateKey(this.props.privateKey);
 			if (!validatePrivateKeyResults.isPrivateKey) {
 				this.props.onClose();
-				alert("Invalid Private Key");
+				alert("不正な秘密鍵");
 				return;
 			}
 			const network = validatePrivateKeyResults.network;
@@ -145,13 +145,13 @@ class SendTransaction extends PureComponent {
 			//Unknown error occurred
 			if (result.error === true) {
 				await this.props.onClose();
-				alert("Unable to retrieve private key data at this time. Please try again later.");
+				alert("秘密鍵の抽出に失敗しました。時間をおいてもう一度お試しください。");
 				return;
 			}
 			//No balance detected
 			if (result.data.balance <= 0) {
 				await this.props.onClose();
-				alert("There were no funds detected for this private key.");
+				alert("秘密鍵に関連付けられた残高がありません。");
 				return;
 			}
 			if (Platform.OS === "ios") {
@@ -842,7 +842,7 @@ class SendTransaction extends PureComponent {
 			const address = this.props.transaction.address;
 			//Validate Address.
 			if (!validateAddress(address, selectedCrypto).isValid) {
-				alert(`It appears that \n "${address}" \n is not a valid ${capitalize(selectedCrypto)} address. Please attempt to re-enter the address.`);
+				alert(`多分ですけど・、\n "${address}" \nは${capitalize(selectedCrypto)}のアドレスじゃないかもです。再度お試しください。`);
 				return;
 			}
 			const wallet = this.props.wallet.wallets[selectedWallet];

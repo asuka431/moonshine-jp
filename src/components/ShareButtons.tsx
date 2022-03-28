@@ -114,7 +114,7 @@ const _ShareButtons = (
             });
         } catch (e) {
             console.log(e);
-            alert("Unable to copy item to clipboard. Please try again or check your phone's permissions.");
+            alert("クリップボードへのコピーに失敗しました。\n権限の確認をして再度お試しください。");
         }
     };
 

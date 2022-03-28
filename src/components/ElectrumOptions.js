@@ -231,12 +231,12 @@ class ElectrumOptions extends PureComponent {
 				//const versionResponse = await electrum.getVersion({ coin });
 				const feeEstimateResponse = await electrum.getFeeEstimate({ coin });
 				if (feeEstimateResponse.error === false) {
-					alert(`Success!!\nSuccessfully connect to:\n${host}:${port}`);
+					alert(`成功!!\n${host}:${port}/nへの接続に成功しました`);
 				} else {
-					alert(`Failure\nUnable to connect to:\n${host}:${port}`);
+					alert(`失敗...\n${host}:${port}\nへの接続に失敗しました。`);
 				}
 			} else {
-				alert(`Failure\nUnable to connect to:\n${host}:${port}`);
+				alert(`失敗...\n${host}:${port}\nへの接続に失敗しました。`);
 			}
 			await this.setState({ loading: "" });
 		} catch (e) {
@@ -285,12 +285,12 @@ class ElectrumOptions extends PureComponent {
 				if (feeEstimateResponse.error === false) {
 					const currentPeers = this.props.settings.customPeers;
 					await this.props.updateSettings({ customPeers: {...currentPeers, [coin]: [{ host, port, protocol }] }, currentPeer: { host, port, protocol } });
-					alert(`Success!!\nSuccessfully connected to and saved:\n${host}:${port}`);
+					alert(`	成功!!\n${host}:${port}\nへの接続に成功しました！`);
 				} else {
-					alert(`Failure\nUnable to connect to:\n${host}:${port}`);
+					alert(`失敗...\n${host}:${port}\nへの接続に失敗しました...`);
 				}
 			} else {
-				alert(`Failure\nUnable to connect to:\n${host}:${port}`);
+				alert(`失敗...\n${host}:${port}\nへの接続に失敗しました...`);
 			}
 			
 			this.setState({ saving: "" });

@@ -99,11 +99,11 @@ const _WalletSliderEntry = ({ walletId = "bitcoin", wallet = { wallets: {}, sele
 			const index = wallet.walletOrder.indexOf(walletId);
 			const walletName = getWalletName();
 			Alert.alert(
-				"Delete Wallet",
-				`Are you sure you wish to delete ${walletName}?`,
+				"ウォレットの削除",
+				`本当に${walletName}を削除しますか?いいんですね?やっちゃいますよ?`,
 				[
-					{ text: "No", onPress: () => {}, style: "cancel" },
-					{ text: "Yes", onPress: () => _delWallet({ walletIndex: index })},
+					{ text: "消さない", onPress: () => {}, style: "cancel" },
+					{ text: "消す", onPress: () => _delWallet({ walletIndex: index })},
 				]
 			);
 		} catch (e) {

@@ -46,17 +46,17 @@ const _Camera = ({ onBarCodeRead = () => null, onClose = () => null }: CameraCom
 					}
 				}}
 				onMountError={() => {
-					alert("There was an error encountered when loading the camera. Please ensure the app has permission to use this feature in your phone settings.");
+					alert("カメラのロードに失敗しました。端末の設定からアプリの権限を確認してください。");
 					onClose();
 				}}
 				notAuthorizedView={notAuthorizedView}
 				type={RNCamera.Constants.Type.back}
 				flashMode={RNCamera.Constants.FlashMode.on}
 				androidCameraPermissionOptions={{
-					title: "Permission to use camera",
-					message: "We need your permission to use your camera",
-					buttonPositive: "Okay",
-					buttonNegative: "Cancel",
+					title: "カメラ使用を許可",
+					message: "カメラ！使わせて！",
+					buttonPositive: "いいよぉ！",
+					buttonNegative: "ノォォォ！",
 				}}
 			/>
 			<View style={styles.xButton}>

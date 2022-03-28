@@ -154,7 +154,7 @@ class SendTransaction extends Component {
 					if (this.hasEnoughFunds()) {
 						this.updateAmount(this.props.transaction.amount);
 					} else {
-						alert(`It appears that\nyou do not have enough funds\nto cover the requested transaction.`);
+						alert(`多分ですけども、\n入力した金額よりも\n持ってるお金のほうが少ないかも...`);
 					}
 				}
 			} catch (e) {}
@@ -504,12 +504,12 @@ class SendTransaction extends Component {
 		const clipboardContent = await Clipboard.getString();
 		//Check if clipboard content exists.
 		if (!clipboardContent) {
-			alert("It appears your clipboard is empty. Please attempt to copy the address again.");
+			alert("クリップボードが空です。もう一度コピーしてみてください。");
 			return;
 		}
 		//Validate Clipboard content.
 		if (!validateAddress(clipboardContent).isValid) {
-			alert(`Invalid Address. Please attempt to copy the address again.`);
+			alert(`アドレスが正しくないです。もう一度確認してみてください。`);
 			return;
 		}
 
@@ -568,13 +568,13 @@ class SendTransaction extends Component {
 			});
 		} catch (e) {
 			console.log(e);
-			alert("Unable to copy rawTx. Please try again or check your phone's permissions.");
+			alert("rawTxの取得に失敗しました。端末の権限を確認して再度お試しください。");
 		}
 	};
 
 	validateTransaction = async () => {
 		if (!this.props.transaction.address || !this.props.transaction.amount) {
-			alert("Please make sure you've added both an address and an amount to send.");
+			alert("送り先アドレスと金額の両方が入力されているか確認してください");
 			return;
 		}
 
@@ -586,14 +586,14 @@ class SendTransaction extends Component {
 		const transactionSize = this.getTransactionByteCount();
 		const totalTransactionCost = amount+(fee*transactionSize);
 		if (totalTransactionCost > balance) {
-			alert(`It appears that\nyou do not have enough funds\nto cover the transaction.`);
+			alert(`多分ですけども、\n送ろうとしている金額に\n持ってる通貨が足りていないです...`);
 			return;
 		}
 
 		const address = this.props.transaction.address;
 		//Validate Address.
 		if (!validateAddress(address, selectedCrypto).isValid) {
-			alert(`It appears that \n "${address}" \n is not a valid ${capitalize(selectedCrypto)} address. Please attempt to re-enter the address.`);
+			alert(`多分ですけども、\n "${address}" \nは${capitalize(selectedCrypto)}のアドレスではない可能性があります。再度ご確認ください。`);
 			return;
 		}
 

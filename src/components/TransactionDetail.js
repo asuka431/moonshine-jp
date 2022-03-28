@@ -423,15 +423,15 @@ class TransactionDetail extends PureComponent {
 		try {
 			if (!address) return;
 			Alert.alert(
-				"Cancel Transaction",
-				`Are you sure you wish to cancel this transaction? This action can be seen as malicious by the original recipient of this transaction.`,
+				"トランザクションをキャンセル",
+				`本当にキャンセルしますか?この機能はたまに詐欺や悪意ある攻撃に使用されることをご留意ください。`,
 				[
 					{
-						text: "No",
+						text: "キャンセルしない",
 						onPress: () => {},
 						style: "cancel",
 					},
-					{text: "Yes", onPress: () => this.attemptRbf(address)},
+					{text: "キャンセルする", onPress: () => this.attemptRbf(address)},
 				]
 			);
 		} catch (e) {}
@@ -471,7 +471,7 @@ class TransactionDetail extends PureComponent {
 					this.props.refreshWallet();
 					setTimeout(() => {
 						InteractionManager.runAfterInteractions(() => {
-							alert("There was an error sending your transaction. It is possible that this transaction may have already confirmed. Please refresh your transaction list and try again.");
+							alert("トランザクションの送信に失敗しました。すでに送信している場合が考えられますので、再読み込みしてみてください。");
 						});
 					},1000);
 				} else {
