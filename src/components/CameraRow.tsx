@@ -83,7 +83,7 @@ const _CameraRow = ({ onSendPress = () => null, onReceivePress = () => null, onC
 				</TouchableHighlight>
 			</View>
 			<TouchableOpacity type="background" onPress={_onReceivePress} style={{...styles.rightItem, ...brandStyle}}>
-				<Text type="text" style={styles.text}>うけとる</Text>
+				<Text type="text" style={styles.text}>受取</Text>
 			</TouchableOpacity>
 		</View>
 	);
