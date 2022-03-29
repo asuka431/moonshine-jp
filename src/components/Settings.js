@@ -96,40 +96,40 @@ const generalHelpItems = [
 
 const walletHelpItems = [
 	{
-		title: "Wallet Name:",
-		text: `This option allows you to either set or update the name of the currently selected wallet.`
+		title: "ウォレット名:",
+		text: `ウォレットの名前を変更できます。`
 	},
 	{
-		title: "Connected To:",
-		text: `This option displays the Electrum server that you are currently connected to. At the time of this writing, tapping this option will connect you to a new Electrum server at random. If you have added a custom Electrum server via the "Electrum Options" menu for this coin the app will simply attempt to disconnect and reconnect to the specified server.`
+		title: "接続先:",
+		text: `接続先のサーバーを表示します。このオプションをタップすることで任意のelectrumサーバーに接続します。メニューの"サーバー設定"から変更した場合は一度切断しランダムにつなぎなおします。`
 	},
 	{
-		title: "Address Type:",
-		text: `This option allows you to toggle between multiple address types for Bitcoin & Litecoin. At the time of this writing, the default is "Bech32" which will generate bc1 addresses for Bitcoin, tb1 addresses for Bitcoin Testnet, ltc1 addresses for Litecoin & tltc1 addresses for Litecoin Testnet.`
+		title: "アドレスの形式:",
+		text: `様々な形式のウォレットアドレスの生成を許可します。例として現時点ではbench32というBitcoinはbc1から始まり、Litecoinはltc1から始まるアドレスを生成したり、legacyアドレスの生成も可能です。`
 	},
 	{
-		title: "BIP39 Passphrase:",
-		text: "A BIP39 passphrase is completely optional. When included, the passphrase is mixed with the selected wallet's mnemonic phrase to create a unique master seed. Including a passphrase significantly increases the security of your wallet as an attacker would not only need to know what your mnemonic phrase is they would also need to know the passphrase in order to gain access to your funds. However, this also works the other way around. In order to recover funds you will need both the mnemonic phrase and the passphrase. So long as you understand and are comfortable with this, adding a passphrase is highly recommended."
+		title: "BIP39パスフレーズ:",
+		text: "BIP39パスフレーズとは自動的にオリジナルの秘密鍵を並べ替えて意味のある英単語の列にする機能です。生成にあたって、パスフレーズがニーモニックと混合されて独自のマスターシードを生成します。これにより間違えにくく、安全性を保った秘密鍵を生成します。単語の追加を推奨し、またウォレットの完全なバックアップのため秘密鍵とパスフレーズの両方のバックアップをしてください。"
 	},
 	{
-		title: "Sign & Verify Messages:",
-		text: "This option allows you to sign and share messages using any address from your currently selected wallet and also allows you to verify messages by providing the proper address, message and signature."
+		title: "メッセージに署名・認証:",
+		text: "このオプションによりウォレットでのメッセージへの署名、共有ができます。アドレス・シグ・メッセージを確認することでより安全な取引をおこなえます。"
 	},
 	{
-		title: "Broadcast Transaction:",
-		text: "This option allows you to broadcast a raw transaction to the network."
+		title: "トランザクションの発信:",
+		text: "このオプションは生のトランザクションをネットワークに送信する際用いられます。"
 	},
 	{
-		title: "Wallet Backup:",
-		text: "Tapping this item displays the mnemonic phrase for the currently selected wallet. This phrase is meant to be kept secret and should be written down and stored in a safe place in case you lose access to your wallet and need to recover your funds."
+		title: "ウォレットのバックアップ:",
+		text: "タップすることでニーモニックフレーズが表示されます。この単語列は有事の際ウォレットを復元するための大切なものです。紙に写すなど物理的な媒体で保存をし、安全な場所に保管してください。"
 	},
 	{
-		title: "Rescan Wallet:",
-		text: `Tapping this item prompts the wallet to rescan all addresses based on the selected "Key Derivation Path" starting at 0.`
+		title: "ウォレットの再読み込み:",
+		text: `タップすることで選択したウォレットの"Key Derivation Path"を0に戻し、再読み込みします。`
 	},
 	{
-		title: "Support:",
-		text: "Tapping this will prompt you to send an email to support. Please utilize this option and reach out if you have any questions whatsoever."
+		title: "サポート:",
+		text: "タップでサポートメールの送信画面が表示されます。些細な問題であってもお知らせください。"
 	}
 ];
 

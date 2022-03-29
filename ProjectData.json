@@ -25,7 +25,7 @@
       "hkd": { "name": "Hong Kong dollar", "unit": "HKD", "symbol": "$", "id": "hong-kong-dollar" },
       "isk": { "name": "Icelandic króna", "unit": "ISK", "symbol": "kr", "id": "icelandic-króna" },
       "inr": { "name": "Indian rupee", "unit": "INR", "symbol": "₹", "id": "indian-rupee" },
-      "jpy": { "name": "Japanese yen", "unit": "JPY", "symbol": "¥", "id": "japanese-yen" },
+      "jpy": { "name": "日本円", "unit": "円", "symbol": "¥", "id": "japanese-yen" },
       "nzd": { "name": "New Zealand dollar", "unit": "NZD", "symbol": "$", "id": "new-zealand-dollar" },
       "gbp": { "name": "Pound sterling", "unit": "GBP", "symbol": "£", "id": "pound-sterling" },
       "cny": { "name": "Renminbi", "unit": "CNY", "symbol": "¥", "id": "renminbi" },
